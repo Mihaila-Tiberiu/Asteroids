@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="5_1091_MIHAILA_ANDREI_TIBERIU.css" />
+    <title>Asteroids</title>
+</head>
+<body>
+    <div class="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    <div class="buttons">
+        <button id="startButton">Incepe<br>jocul</button>
+        <button id="stopButton">Opreste jocul</button>
+        <div id="info">
+            <p id="controls">Controale</p>
+            <p>Miscare: ⬅️⬆️⬇️➡️</p>
+            <p>Rotire: Z / C</p>
+            <p>Racheta: X</p>
+        </div>
+    </div>
+    <script src="5_1091_MIHAILA_ANDREI_TIBERIU.js"></script>
+    <script>
+        'use strict';
+        const gameCanvas = document.getElementById("gameCanvas");
+
+        gameCanvas.width = screen.width*0.8;
+        gameCanvas.height = screen.height*0.8;
+
+        const btnStart = document.getElementById('startButton');
+        btnStart.addEventListener('click', function(){
+            const joc = new Joc('gameCanvas', document);
+            joc.start();
+            btnStart.innerHTML= "Reincepe jocul";
+        });
+
+        const btnStop = document.getElementById('stopButton');
+        btnStop.addEventListener('click', function(){
+            window.location.reload();
+        });
+    </script>
+</body>
+</html>
